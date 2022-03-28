@@ -10,13 +10,18 @@ export default function PostPage({
 }) {
   return (
     <>
-      <div className='card card-page'>
-        <h1 className='post-title'>{title}</h1>
-        <div className='post-date'>Posted on {date}</div>
+      <article className='post'>
+        <header className='post-header'>
+          <h1 className='post-title'>{title}</h1>
+        </header>
         <div className='post-body'>
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
-      </div>
+        <footer className='post-footer'>
+          以上
+          <div className='post-date'>{date}</div>
+        </footer>
+      </article>
     </>
   )
 }

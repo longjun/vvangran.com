@@ -1,16 +1,200 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* --------------------------------------------------------------------------------------------- */
+/*  0. CSS Variables
+/* --------------------------------------------------------------------------------------------- */
+:root {
+  /* Typography */
+  --body-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+  --headings-font: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+  --headings-weight: 700;
+  /* Colors */
+  --accent-color: #d23c50;
+  --primary-color: #1e2d32;
+  --secondary-color: #707376;
+  --border-color: #d6d5d4;
+  --light-background-color: #f3efe9;
+  --background-color: #fff;
+  --menu-modal-background-color: #1e2d32;
+  --menu-modal-text-color: #fff;
+  /* Layout */
+  --inner-width-thin: 65.2rem;
+  --inner-width-small: 76rem;
+  --inner-width-medium: 104rem;
+  --inner-width-max: 205.2rem;
+  --inner-gutter: 4.8rem;
+  --aside-width: 6.4rem;
+}
+/* css-vars-ponyfill fix for only supporting initial values of CSS variables */
+@media (max-width: 700px) {
+  :root {
+      --aside-width: .4rem;
+  }
+}
+/* P3 Colors, where supported */
+@supports (color: color(display-p3 0 0 0 / 1)) {
+  :root {
+      --accent-color: color(display-p3 0.824 0.235 0.314 / 1);
+      --primary-color: color(display-p3 0.118 0.176 0.196 / 1);
+      --secondary-color: color(display-p3 0.439 0.451 0.463 / 1);
+      --border-color: color(display-p3 0.839 0.835 0.831 / 1);
+      --light-background-color: color(display-p3 0.953 0.937 0.914 / 1);
+      --menu-modal-text-color: color(display-p3 1 1 1 / 1);
+      --menu-modal-background-color: color(display-p3 0.118 0.176 0.196 / 1);
+      --background-color: color(display-p3 1 1 1 / 1);
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* --------------------------------------------------------------------------------------------- */
+/*  0. CSS Reset
+/* --------------------------------------------------------------------------------------------- */
+html,
+body {
+    border: none;
+    margin: 0;
+    padding: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+}
+blockquote:before,
+blockquote:after {
+    content: "";
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/*  1. Document Setup
+/* --------------------------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+/* Fix for the admin bar */
+@media (max-width: 599px) {
+  html.scroll-locked {
+      margin: 0 !important;
+  }
+}
+html.has-aside {
+  background-image: repeating-linear-gradient(90deg,
+          var(--menu-modal-background-color),
+          var(--menu-modal-background-color) var(--aside-width),
+          var(--background-color) var(--aside-width),
+          var(--background-color) 100%);
+}
+html:not(.has-aside) {
+  /* Layout */
+  --aside-width: 0rem;
+}
+body {
+  background-color: var(--background-color) !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-left: var(--aside-width) solid var(--menu-modal-background-color);
+  box-sizing: border-box;
+  color: var(--primary-color);
+  font-family: var(--body-font);
+  font-size: 1.7rem;
+  min-height: 100vh;
+  text-align: left;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  letter-spacing: -0.01em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration-thickness: .1rem;
+  text-underline-offset: .175em;
+  word-break: break-word;
+}
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+::selection {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
 
 * {
   box-sizing: border-box;
+  line-height: 173.2%!important;
+  letter-spacing: 0.381pt;
+}
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.post h1,
+.post h2,
+.post h3 {
+  color: #1a1c1e;
+  font-family: "Noto Serif",Georgia,serif;
+  font-weight: 700;
+  line-height: 1.38;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+.post p {
+  font-size: 2rem;
+  text-align: justify; 
+  text-justify: inter-ideographic;
+  letter-spacing: -0.003rem;
+  margin-bottom: 3rem;
+}
+.post hr {
+  color: #d6d5d4;
+  background-color: transparent !important;
+  border: none;
+  text-align: center;
+  background-image: linear-gradient( -45deg, currentColor 25%, transparent 25%, transparent 50%, currentColor 50%, currentColor 75%, transparent 75%, transparent );
+  background-position: 0;
+  background-size: 0.4rem 0.4rem;
+  display: block;
+  height: 1rem;
+  image-rendering: pixelated;
+  margin: 4rem auto;
+  width: 6.6rem;
+}
+.post img {
+  display: inline-block;
+  max-width: 100%;
 }
