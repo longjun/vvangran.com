@@ -3,8 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../../components/Post'
 
-export default function Posts({ posts }) {
-  console.log(posts)
+export default function Blog({ posts }) {
   return (
     <div>
       <div className='posts'>

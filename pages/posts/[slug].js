@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 
-export default function PostPage({
+export default function Article({
   frontmatter: { title, date },
   slug,
   content,
