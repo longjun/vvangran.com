@@ -11,3 +11,5 @@ thumb: [
 ]
 ---
 ## title
+![alt text for the image](https://image/src "Here is the caption")
+![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg) ![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg)

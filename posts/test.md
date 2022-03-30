@@ -3,6 +3,11 @@ title: 'Mac mini + 5K 顯示器，為什麼我不選 iMac？'
 date: '2022-03-28'
 excerpt: 'This is the excerpt'
 ---
+## image test
+![alt text for the image](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05626_ytsf3j.jpg "Here is the caption")
+
+![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05465_dtkwef.jpg) ![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg)
+
 在 2020 年回顧文章中，我提到開始使用 iPad Pro 完成一些輕度工作，並嘗試不背電腦回家。
 
 隨著電腦被我丟在公司作為桌機使用，我也把 MacBook Pro 換成了 Mac mini，這樣一來就不需要擔心持續充電，可能造成的電池秏損問題，二來也能取得更好的效能。

@@ -8,6 +8,22 @@ export default function Article({
   slug,
   content,
 }) {
+  const renderer = new marked.Renderer() 
+  renderer.paragraph = text => {
+    var isImage = /<img.*?(?:>|\/>)/gi.test(text)
+    console.log(text)
+    if (isImage) {
+      return `<section class="photoset">${text}</section>`
+    } else {
+      return `<p>${ text }</p>`
+    }
+  } 
+  renderer.image = function(href, title, text) {
+    return `<figure class="photoset-item">
+      <img οnclick="showMarkedImage(event, '${href}')" src="${href}" alt="${text}">
+      ${ title ? `<figcaption>${ title }</figcaption>` : ''}
+    </figure>`
+  }
   return (
     <>
       <article className='post'>
@@ -15,7 +31,7 @@ export default function Article({
           <h1 className='post-title'>{title}</h1>
         </header>
         <div className='post-body'>
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+          <div dangerouslySetInnerHTML={{ __html: marked(content, { renderer }) }}></div>
         </div>
         <footer className='post-footer'>
           以上
