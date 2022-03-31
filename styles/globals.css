@@ -229,13 +229,12 @@ img {
   vertical-align: bottom;
   max-width: 100%;
 }
-.post {
-  max-width: 800px;
+.post-content {
   margin: 0 auto;
 }
-.post h1,
-.post h2,
-.post h3 {
+.post-content h1,
+.post-content h2,
+.post-content h3 {
   color: #1a1c1e;
   font-family: "Noto Serif",Georgia,serif;
   font-weight: 700;
@@ -243,14 +242,18 @@ img {
   margin-top: 2rem;
   font-size: 2.5rem;
 }
-.post p {
+.post-content>* {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+.post-content p {
   font-size: 2rem;
   text-align: justify; 
   text-justify: inter-ideographic;
   letter-spacing: -0.003rem;
-  margin-bottom: 3rem;
 }
-.post hr {
+.post-content hr {
   color: #d6d5d4;
   background-color: transparent !important;
   border: none;
@@ -264,9 +267,15 @@ img {
   margin: 4rem auto;
   width: 6.6rem;
 }
-.post img {
+.post-content img {
   display: inline-block;
   max-width: 100%;
+}
+
+.post-content>.gallery {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .photosets {
@@ -292,4 +301,35 @@ img {
   min-width: 100%;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+.gallery {
+}
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery-item {
+  flex: 1;
+  margin: 0.2rem 0.1rem 0;
+}
+/* .gallery-item:first-child {
+  width: 100%;
+} */
+/* .gallery-item:nth-child(n+2) {
+  height: 20vh;
+  flex-grow: 1;
+} */
+.gallery-item img {
+  max-height: 100%;
+  min-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+@media (min-width: 960px) {
+  .post-content>.gallery {
+    max-width: 90%;
+  }
 }
