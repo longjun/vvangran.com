@@ -10,19 +10,21 @@ export default function Article({
 }) {
   const renderer = new marked.Renderer() 
   renderer.paragraph = text => {
-    var isImage = /<img.*?(?:>|\/>)/gi.test(text)
     console.log(text)
+    var isImage = /<img.*?(?:>|\/>)/gi.test(text)
     if (isImage) {
       return `<section class="photoset">${text}</section>`
     } else {
       return `<p>${ text }</p>`
     }
   } 
+  renderer.html = (html) => {
+    console.log(html)
+  }
   renderer.image = function(href, title, text) {
     return `<figure class="photoset-item">
-      <img οnclick="showMarkedImage(event, '${href}')" src="${href}" alt="${text}">
-      ${ title ? `<figcaption>${ title }</figcaption>` : ''}
-    </figure>`
+      <img src="${href}" alt="${text}">
+      ${ title ? `<figcaption>${ title }</figcaption>` : ''}</figure>`
   }
   return (
     <>

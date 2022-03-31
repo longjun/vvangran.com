@@ -7,6 +7,8 @@ excerpt: 'This is the excerpt'
 ![alt text for the image](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05626_ytsf3j.jpg "Here is the caption")
 
 ![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05465_dtkwef.jpg) ![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg)
+![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg)
+![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg)![alt](https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814784/photostream-photos/DSC05624_f5b2ud.jpg)
 
 在 2020 年回顧文章中，我提到開始使用 iPad Pro 完成一些輕度工作，並嘗試不背電腦回家。
 
@@ -49,14 +51,6 @@ git commit
 - [ ] Add delight to the experience when all tasks are complete :tada:
 
 This site was built using [GitHub Pages](https://pages.github.com/).
-
-![顯示器支架也是能讓桌面更簡潔的方式之一。](https://yanase.tw/wp-content/uploads/2022-03-01.jpg)
-顯示器支架也是能讓桌面更簡潔的方式之一。
-
-<figure>
-  <img src="https://yanase.tw/wp-content/uploads/2022-03-01.jpg" alt="my alt text"/>
-  <figcaption>This is my caption text.</figcaption>
-</figure>
 
 ## Why Ultrafine 5K？
 
