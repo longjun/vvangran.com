@@ -229,6 +229,35 @@ img {
   vertical-align: bottom;
   max-width: 100%;
 }
+
+#header {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.navigator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: .5rem 1rem;
+  border-radius: 99rem;
+  background-color: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(1rem);
+}
+.navigator a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.navigator a svg {
+  display: block;
+}
+
 .post-content {
   margin: 0 auto;
 }
