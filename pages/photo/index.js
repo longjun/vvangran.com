@@ -27,7 +27,7 @@ export default function Photosets({ photos }) {
 export async function getStaticProps() {
 
   // Get files from the posts dir
-  const files = fs.readdirSync(path.join('photos'))
+  const files = fs.readdirSync(path.join('data/photos'))
 
   // Get slug and frontmatter from posts
   const photos = files.map((filename) => {

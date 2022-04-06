@@ -61,7 +61,7 @@ export default function Article({
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('data/posts'))
 
   const paths = files.map((filename) => ({
     params: {

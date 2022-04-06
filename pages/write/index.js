@@ -18,7 +18,7 @@ export default function Blog({ posts }) {
 export async function getStaticProps() {
 
   // Get files from the posts dir
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('data/posts'))
 
   // Get slug and frontmatter from posts
   const posts = files.map((filename) => {

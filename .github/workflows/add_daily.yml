@@ -1,0 +1,30 @@
+name: Daily routine
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: Add a single item to daily routine
+        type: string
+        required: true
+
+jobs:
+  add_to_daily:
+    name: Add item to daily
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: add line to file and commit
+        run: |
+          filename="data/daily/$(date +'%Y-%m-%d').md"
+          echo "${{ github.event.inputs.text }}" >> $filename
+
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add $filename
+          git commit -m "daily item added by github action"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
