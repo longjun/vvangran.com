@@ -3,21 +3,12 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
-
 export default function Article({
   frontmatter: { title, date },
   slug,
   content,
 }) {
 
-  // const lightbox = new PhotoSwipeLightbox({
-  //   gallery: '.gallery',
-  //   children: '.gallery-item',
-  //   pswpModule: () => import('photoswipe')
-  // })
-  // lightbox.init()
   const renderer = new marked.Renderer() 
   renderer.paragraph = text => {
     var imageRe = /<img.*?(?:>|\/>)/gi
